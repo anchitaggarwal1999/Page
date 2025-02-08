@@ -3,93 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Introducing Akshitarian</title>
+  <title>Breaking News: New Zodiac Sign Akshitarian</title>
+  <!-- Bootstrap CSS for quick styling -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
-    /* Base Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
-      background: url('https://example.com/star-background.jpg') no-repeat center center fixed;
-      background-size: cover;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .news-header {
+      background-color: #343a40;
+      padding: 20px;
       color: #fff;
-      text-align: center;
-      padding: 50px 20px;
     }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 30px;
-      border-radius: 10px;
+    .news-header h1 {
+      margin: 0;
+      font-size: 2.5rem;
     }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 0.2em;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-    }
-    p {
-      font-size: 1.2em;
-      margin-bottom: 1em;
-      line-height: 1.5;
-    }
-    .countdown {
-      font-size: 2em;
-      margin: 20px 0;
+    .breaking {
+      color: #dc3545;
       font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .main-content {
+      padding: 30px 15px;
+    }
+    .article-title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .article-meta {
+      font-size: 0.9rem;
+      color: #6c757d;
+      margin-bottom: 20px;
+    }
+    .article-body p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
     }
     .footer {
+      background-color: #343a40;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
       margin-top: 30px;
-      font-size: 0.9em;
-      opacity: 0.8;
-    }
-    @media(max-width: 600px) {
-      h1 { font-size: 2.5em; }
-      p { font-size: 1em; }
-      .countdown { font-size: 1.5em; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Akshitarian</h1>
-    <p>The newest zodiac sign in the universe – uniquely created for someone extraordinary.</p>
-    <div id="countdown" class="countdown"></div>
-    <p>Mark your calendar: The stars have aligned and Akshitarian is launching soon!</p>
+
+  <!-- Header Section -->
+  <header class="news-header text-center">
+    <div class="container">
+      <h1>Global News Network</h1>
+      <p class="breaking">Breaking News</p>
+    </div>
+  </header>
+
+  <!-- Main Content Section -->
+  <div class="container main-content">
+    <article>
+      <h2 class="article-title">New Zodiac Sign: Akshitarian</h2>
+      <p class="article-meta">Published on February 8, 2025 | By Cosmic Herald</p>
+      <div class="article-body">
+        <p>In a stunning announcement shaking the foundations of astrology, experts have confirmed the emergence of a new zodiac sign – <strong>Akshitarian</strong>. This unprecedented sign is set to redefine celestial charts and bring a fresh perspective to personality analysis and cosmic energy.</p>
+        <p>Leading astrologers describe Akshitarian as a unique blend of creativity, intuition, and forward-thinking energy. Unlike traditional zodiac signs, this sign is meant to represent those who dare to break the mold and embrace their individuality. Sources close to the cosmic community reveal that the sign’s official launch will coincide with a rare planetary alignment, marking it as a historic event.</p>
+        <p>"Akshitarian is more than a zodiac sign—it’s the herald of a new era in astrology where uniqueness is celebrated," stated a renowned astrologer. With excitement building worldwide, many are eagerly updating their birth charts and forecasts in anticipation of this revolutionary sign.</p>
+        <p>Stay tuned as Global News Network brings you further updates on this monumental development in the world of astrology. More details on the official launch and the special attributes of Akshitarian are expected in the coming weeks.</p>
+      </div>
+    </article>
   </div>
-  
-  <div class="footer">
-    <p>Crafted with cosmic love by [Your Name].</p>
-  </div>
 
-  <script>
-    // Set the launch date (update this date as needed)
-    const launchDate = new Date("2025-03-01T00:00:00").getTime();
+  <!-- Footer Section -->
+  <footer class="footer">
+    <p>© 2025 Global News Network. All rights reserved.</p>
+  </footer>
 
-    const countdownEl = document.getElementById("countdown");
-
-    const timer = setInterval(function() {
-      const now = new Date().getTime();
-      const distance = launchDate - now;
-
-      // Time calculations
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      // Display the result
-      countdownEl.textContent = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
-      // If the countdown is over, display the message
-      if (distance < 0) {
-        clearInterval(timer);
-        countdownEl.textContent = "Akshitarian is here!";
-      }
-    }, 1000);
-  </script>
+  <!-- Optional JavaScript: jQuery and Bootstrap Bundle -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
