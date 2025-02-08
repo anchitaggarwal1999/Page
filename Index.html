@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Introducing Akshitarian</title>
+  <style>
+    /* Base Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: url('https://example.com/star-background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 10px;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.2em;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+    p {
+      font-size: 1.2em;
+      margin-bottom: 1em;
+      line-height: 1.5;
+    }
+    .countdown {
+      font-size: 2em;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+    @media(max-width: 600px) {
+      h1 { font-size: 2.5em; }
+      p { font-size: 1em; }
+      .countdown { font-size: 1.5em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Akshitarian</h1>
+    <p>The newest zodiac sign in the universe – uniquely created for someone extraordinary.</p>
+    <div id="countdown" class="countdown"></div>
+    <p>Mark your calendar: The stars have aligned and Akshitarian is launching soon!</p>
+  </div>
+  
+  <div class="footer">
+    <p>Crafted with cosmic love by [Your Name].</p>
+  </div>
+
+  <script>
+    // Set the launch date (update this date as needed)
+    const launchDate = new Date("2025-03-01T00:00:00").getTime();
+
+    const countdownEl = document.getElementById("countdown");
+
+    const timer = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      // Time calculations
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the result
+      countdownEl.textContent = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+      // If the countdown is over, display the message
+      if (distance < 0) {
+        clearInterval(timer);
+        countdownEl.textContent = "Akshitarian is here!";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
